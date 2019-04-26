@@ -53,6 +53,7 @@ class MyApp extends PolymerElement {
 
         app-header paper-icon-button {
           --paper-icon-button-ink-color: white;
+          margin-right: 20px;
         }
 
         .drawer-list {
@@ -94,10 +95,13 @@ class MyApp extends PolymerElement {
         <!-- Main content -->
         <app-header-layout has-scrolling-region="">
 
-          <app-header slot="header" condenses="" reveals="" effects="waterfall">
+          <app-header slot="header" condenses="" reveals="" effects="resize-title">
             <app-toolbar>
-              <paper-icon-button icon="my-icons:menu" drawer-toggle=""></paper-icon-button>
-              <div main-title="">My App</div>
+            <paper-icon-button icon="my-icons:menu" drawer-toggle=""></paper-icon-button>
+              <h4 condensed-title>Plus Mobile Apps</h4>
+            </app-toolbar>
+            <app-toolbar>
+              <h1 main-title>Plus Mobile Apps</h1>
             </app-toolbar>
           </app-header>
 
