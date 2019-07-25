@@ -9,44 +9,120 @@
  */
 
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import '@polymer/app-layout/app-layout.js';
+import '@polymer/paper-card/paper-card.js';
 import './shared-styles.js';
 
 class MyView1 extends PolymerElement {
   static get template() {
     return html`
-      <style include="shared-styles">
-        :host {
-          display: block;
+    <style include="app-grid-style">
 
-          padding: 10px;
-        }
-      </style>
+    .content {
+      display: block;
+      position: relative;
+      max-width: 1000px;
+      margin: 5px auto;
+    }
 
-      <div class="card">
-        <div class="circle">1</div>
-        <h1>View One</h1>
-        <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
+    .card-container {
+      display: inline-block;
+      width: 33.33%;
+      color: black;
+      text-decoration: none;
+    }
+
+    paper-card {
+      display: block;
+      margin: 5px;
+      --paper-card-header-image: {
+        height: 200px;
+      }
+    }
+
+    paper-card {
+      display: block;
+      margin: 5px;
+      --paper-card-header-image: {
+        height: 200px;
+      }
+    }
+
+    paper-card h2 {
+      margin: 4px;
+      font-weight: normal;
+    }
+
+    paper-card p {
+      margin: 4px;
+      color: #999;
+    }
+
+    @media (max-width: 960px) {
+      .content {
+        max-width: 800px;
+      }
+      .card-container {
+        width: 50%;
+      }
+    }
+
+    @media (max-width: 719px) {
+      .content {
+        max-width: 400px;
+      }
+      .card-container {
+        width: 100%;
+      }
+    }
+
+
+  </style>
+  
+  <div class="content">
+        <template is="dom-repeat" items="{{articles}}"><!-- No empty text node
+        --><a href="#/detail/{{item.id}}" class="card-container">
+            <paper-card image="{{item.imageUrl}}">
+              <div class="card-content">
+                <h2>{{item.name}}</h2>
+                <p>By <span>{{item.author}}</span></p>
+              </div>
+            </paper-card>
+          </a><!-- No empty text node
+      --></template>
       </div>
     `;
+  }
+
+  constructor() {
+    super();
+  }
+
+  static get properties() {
+    return {
+      articles: {
+        value() {
+          return [
+            {imageUrl: 'https://pbs.twimg.com/profile_images/875443327835025408/ZvmtaSXW_400x400.jpg', author: 'Andrew Steinmetz', name: 'Some Article', id: 1},
+            {imageUrl: 'https://pbs.twimg.com/profile_images/875443327835025408/ZvmtaSXW_400x400.jpg', author: 'Andrew Steinmetz', name: 'Some Article', id: 1},
+            {imageUrl: 'https://pbs.twimg.com/profile_images/875443327835025408/ZvmtaSXW_400x400.jpg', author: 'Andrew Steinmetz', name: 'Some Article', id: 1},
+            {imageUrl: 'https://pbs.twimg.com/profile_images/875443327835025408/ZvmtaSXW_400x400.jpg', author: 'Andrew Steinmetz', name: 'Some Article', id: 1},
+            {imageUrl: 'https://pbs.twimg.com/profile_images/875443327835025408/ZvmtaSXW_400x400.jpg', author: 'Andrew Steinmetz', name: 'Some Article', id: 1},
+            {imageUrl: 'https://pbs.twimg.com/profile_images/875443327835025408/ZvmtaSXW_400x400.jpg', author: 'Andrew Steinmetz', name: 'Some Article', id: 1},
+            {imageUrl: 'https://pbs.twimg.com/profile_images/875443327835025408/ZvmtaSXW_400x400.jpg', author: 'Andrew Steinmetz', name: 'Some Article', id: 1},
+            {imageUrl: 'https://pbs.twimg.com/profile_images/875443327835025408/ZvmtaSXW_400x400.jpg', author: 'Andrew Steinmetz', name: 'Some Article', id: 1},
+            {imageUrl: 'https://pbs.twimg.com/profile_images/875443327835025408/ZvmtaSXW_400x400.jpg', author: 'Andrew Steinmetz', name: 'Some Article', id: 1},
+            {imageUrl: 'https://pbs.twimg.com/profile_images/875443327835025408/ZvmtaSXW_400x400.jpg', author: 'Andrew Steinmetz', name: 'Some Article', id: 1},
+            {imageUrl: 'https://pbs.twimg.com/profile_images/875443327835025408/ZvmtaSXW_400x400.jpg', author: 'Andrew Steinmetz', name: 'Some Article', id: 1},
+            {imageUrl: 'https://pbs.twimg.com/profile_images/875443327835025408/ZvmtaSXW_400x400.jpg', author: 'Andrew Steinmetz', name: 'Some Article', id: 1},
+            {imageUrl: 'https://pbs.twimg.com/profile_images/875443327835025408/ZvmtaSXW_400x400.jpg', author: 'Andrew Steinmetz', name: 'Some Article', id: 1},
+            {imageUrl: 'https://pbs.twimg.com/profile_images/875443327835025408/ZvmtaSXW_400x400.jpg', author: 'Andrew Steinmetz', name: 'Some Article', id: 1},
+            {imageUrl: 'https://pbs.twimg.com/profile_images/875443327835025408/ZvmtaSXW_400x400.jpg', author: 'Andrew Steinmetz', name: 'Some Article', id: 1},
+            {imageUrl: 'https://pbs.twimg.com/profile_images/875443327835025408/ZvmtaSXW_400x400.jpg', author: 'Andrew Steinmetz', name: 'Some Article', id: 10},
+          ]
+        }
+      }
+    }
   }
 }
 
