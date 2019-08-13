@@ -21,6 +21,7 @@ import '@polymer/app-route/app-route.js';
 import '@polymer/iron-pages/iron-pages.js';
 import '@polymer/iron-selector/iron-selector.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
+import '@polymer/paper-button/paper-button.js';
 import './my-icons.js';
 
 // Gesture events like tap and track generated from touch will not be
@@ -81,9 +82,10 @@ class MyApp extends PolymerElement {
       </app-route>
 
       <app-drawer-layout fullbleed="" responsiveWidth="1280px" narrow="{{narrow}}">
-        <!-- Drawer content -->
+      <!-- Drawer content -->
         <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
           <app-toolbar>Menu</app-toolbar>
+          <paper-button raised>raised</paper-button>
           <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
             <a name="view1" href="[[rootPath]]view1">PWA</a>
             <a name="view2" href="[[rootPath]]view2">Android</a>
