@@ -24,7 +24,9 @@
     "@polymer/paper-card": "^3.0.1",
     "@polymer/paper-icon-button": "^3.0.0-pre.15",
     "@polymer/polymer": "^3.0.0",
-    "@webcomponents/webcomponentsjs": "^2.0.0"
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "firebase": "^6.3.5",
+    "firebaseui": "^4.1.0"
   },
   "devDependencies": {
     "polymer-cli": "^1.9.11",

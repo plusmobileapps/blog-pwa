@@ -21,7 +21,7 @@ import '@polymer/app-route/app-route.js';
 import '@polymer/iron-pages/iron-pages.js';
 import '@polymer/iron-selector/iron-selector.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
-import '@polymer/paper-button/paper-button.js';
+import './firebase-app.js';
 import './my-icons.js';
 
 // Gesture events like tap and track generated from touch will not be
@@ -85,7 +85,7 @@ class MyApp extends PolymerElement {
       <!-- Drawer content -->
         <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
           <app-toolbar>Menu</app-toolbar>
-          <paper-button raised>raised</paper-button>
+          <my-firebase-app></my-firebase-app>
           <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
             <a name="view1" href="[[rootPath]]view1">PWA</a>
             <a name="view2" href="[[rootPath]]view2">Android</a>
