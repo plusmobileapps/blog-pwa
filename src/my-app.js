@@ -21,6 +21,7 @@ import '@polymer/app-route/app-route.js';
 import '@polymer/iron-pages/iron-pages.js';
 import '@polymer/iron-selector/iron-selector.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
+import '@polymer/paper-button/paper-button.js';
 import './firebase-app.js';
 import './my-icons.js';
 
@@ -81,11 +82,13 @@ class MyApp extends PolymerElement {
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}">
       </app-route>
 
+      <my-firebase-app></my-firebase-app>
+
       <app-drawer-layout fullbleed="" responsiveWidth="1280px" narrow="{{narrow}}">
       <!-- Drawer content -->
         <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
           <app-toolbar>Menu</app-toolbar>
-          <my-firebase-app></my-firebase-app>
+          <paper-button raised on-click="onSignInClick">Sign In</paper-button>
           <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
             <a name="view1" href="[[rootPath]]view1">PWA</a>
             <a name="view2" href="[[rootPath]]view2">Android</a>
@@ -113,6 +116,7 @@ class MyApp extends PolymerElement {
             <my-view3 name="view3"></my-view3>
             <my-about-me name="aboutMe"></my-about-me>
             <my-view404 name="view404"></my-view404>
+            <authentication-view name="authentication-view"></authentication-view>
           </iron-pages>
         </app-header-layout>
       </app-drawer-layout>
@@ -137,6 +141,10 @@ class MyApp extends PolymerElement {
     ];
   }
 
+  onSignInClick() {
+    this.page = 'authentication-view';
+  }
+
   _routePageChanged(page) {
      // Show the corresponding page according to the route.
      //
@@ -144,7 +152,7 @@ class MyApp extends PolymerElement {
      // Show 'view1' in that case. And if the page doesn't exist, show 'view404'.
     if (!page) {
       this.page = 'view1';
-    } else if (['view1', 'view2', 'view3','aboutMe'].indexOf(page) !== -1) {
+    } else if (['view1', 'view2', 'view3','aboutMe', 'authentication-view'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'view404';
@@ -177,6 +185,8 @@ class MyApp extends PolymerElement {
       case 'view404':
         import('./my-view404.js');
         break;
+      case 'authentication-view':
+        import('./authentication-view.js');
     }
   }
 }
